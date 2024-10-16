@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Service</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>Food court delivery!!</h1>
+    </header>
+
+    <section> 
+        <table>
+            <caption>Delicious Food Items are Available for Delivery</caption>
+            <thead>
+                <tr>
+                    <th>Dish Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MO:MO</td>
+                    <td>Momo with buff keema, masala and tomato aachar.</td>
+                    <td>Rs.500</td>
+                </tr>
+                <tr>
+                    <td>Chicken Burger</td>
+                    <td>Chicken burger topped with cheese and tomato.</td>
+                    <td>Rs.700</td>
+                </tr>
+                <tr>
+                    <td>Chicken sizzler</td>
+                    <td>Chicken sizzler with vegetables and noodles. </td>
+                    <td>Rs.950</td>
+                </tr>
+                <tr>
+                    <td>Keema noodles</td>
+                    <td>Keema noodles with Buff keema and chilisauce.</td>
+                    <td>Rs.650</td>
+                </tr>
+                <tr>
+                    <td>Pork sekuwa</td>
+                    <td>Pork sekuwa with Special chili sauce and Tomato aachar.</td>
+                    <td>Rs.1000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <p>
+    
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone">
+            </p>
+
+            <fieldset>
+                <legend>Select Your Food Items:</legend>
+                <input type="checkbox" id="MO:MO" name="food" value="Buff momo">
+                <label for="MO:MO">Buff momo</label><br>
+                <input type="checkbox" id="Burger" name="food" value="Chickenburger">
+                <label for="burger">Chicken burger</label><br>
+                <input type="checkbox" id="sizzler" name="food" value="Chicken sizzler">
+                <label for="sizzler">Chicken sizzler</label><br>
+                <input type="checkbox" id="Keema noodles" name="food" value="Keema noodles">
+                <label for="Keema noodles">Keema noodles</label><br>
+                <input type="checkbox" id="Sekuwa" name="food" value="Pork Sekuwa">
+                <label for="Sekuwa">Pork sekuwa</label><br>
+            </fieldset>
+            <p>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+            </p>
+            <p>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+            </p>
+            <p>
+
+
+            <button type="submit">Order Your Favourite Dish....</button>
+            </p>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            const foodItems = document.querySelectorAll('input[name="food"]:checked');
+            if (foodItems.length === 0) {
+                alert("Please select at least one food item.");
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>
